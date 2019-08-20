@@ -10,11 +10,6 @@ executors:
     docker:
       - image: circleci/clojure:lein-2.9.1
 
-  lein-plugin:
-    working_directory: /home/circleci/camsaul/clojure.i18n/lein-plugin/
-    docker:
-      - image: circleci/clojure:lein-2.9.1
-
   java-11:
     working_directory: /home/circleci/camsaul/clojure.i18n/
     docker:
@@ -146,21 +141,6 @@ workflows:
             - linter-namespace-decls
             - tests
             - tests-java-11
-          lein-command: deploy clojars
-          filters:
-            branches:
-              only: master
-
-      - lein:
-          name: deploy-plugin
-          requires:
-            - linter-bikeshed
-            - linter-docstring-checker
-            - linter-eastwood
-            - linter-namespace-decls
-            - tests
-            - tests-java-11
-          e: lein-plugin
           lein-command: deploy clojars
           filters:
             branches:

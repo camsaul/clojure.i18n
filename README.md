@@ -10,6 +10,7 @@
 
 ```clojure
 :clojure.i18n {:output-file "~/Desktop/sample.pot"}
+```
 
 ```sh
 lein generate-pot
