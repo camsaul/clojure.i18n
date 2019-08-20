@@ -54,7 +54,7 @@ jobs:
           paths:
             - camsaul/clojure.i18n
 
-be-deps:
+  be-deps:
     executor: default
     steps:
       - attach-workspace
